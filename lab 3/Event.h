@@ -7,15 +7,17 @@ using namespace std;
 class Event 
 {
 protected:
-	string name;
-	double duration;
+    string name;
+    double duration;
 public:
-	Event();
-	Event(string& name, double  duration);
-	virtual void displayEvent() = 0;
-	string& getName();
-	double getDuration();
-	virtual Event& inputEventDetails() = 0;
+    Event();
+    Event(const string& name, double duration);
+    virtual ~Event() = default;
+
+    virtual void displayEvent() const = 0;
+    string getName() const;
+    double getDuration() const;
+    virtual Event& inputEventDetails() = 0;
 };
 
 #endif
