@@ -1,5 +1,6 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
+using namespace std;
 
 #include "Event.h"
 #include "FileManager.h"
@@ -7,7 +8,7 @@
 
 class Calendar {
 private:
-    std::vector<Event*> events;
+    vector<Event*> events;
     FileManager fileManager;
 
 public:
@@ -17,8 +18,11 @@ public:
     double calculateSumDuration() const;
     int averageRepeats() const;
     void displayAllEvents() const;
-    bool saveToFile(const std::string& filename);
-    bool loadFromFile(const std::string& filename);
+    bool saveToFile(const string& filename);
+    bool loadFromFile(const string& filename);
+
+    std::vector<Event*> filterEventsByDate(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) const;
+
 };
 
 #endif
