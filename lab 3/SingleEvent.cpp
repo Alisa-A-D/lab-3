@@ -2,23 +2,32 @@
 #include "SingleEvent.h"
 using namespace std;
 
-SingleEvent::SingleEvent():Event()
+SingleEvent::SingleEvent() :Event()
 {
-	for (int i:date) {
-		i = 0;
-	}
+    for (int i : date) {
+        i = 0;
+    }
 }
-SingleEvent::SingleEvent(string& name, double duration, int dd, int mm, int yy) : Event(name, duration) 
+
+SingleEvent::SingleEvent(const string& name, double duration, int dd, int mm, int yy): Event(name, duration)
 {
-	date[0] = dd; date[1] = mm; date[2] = yy;
-};
-void SingleEvent::displayEvent() 
+    date[0] = dd; date[1] = mm; date[2] = yy;
+
+}
+
+void SingleEvent::displayEvent() const
 {
-	cout << name << ":" << date[0] << "." << date[1] << "." << date[2] << endl;
-};
-SingleEvent& SingleEvent::inputEventDetails() 
+    cout << "Single Event: " << name 
+        << ", " << date[0] << "." << date[1] << "." << date[2] << ", Duration: " << duration << endl;
+}
+
+SingleEvent& SingleEvent::inputEventDetails()
 {
-	cout << "Enter information about event: name, duration, date(day, month, year)" << endl;
-	cin >> name >> duration >> date[0] >> date[1] >> date[2];
-	return *this;
+    cout << "Enter information about event: name, duration, date(day, month, year)" << endl;
+    cin >> name >> duration >> date[0] >> date[1] >> date[2];
+    return *this;
+}
+
+const int* SingleEvent::getDate() const {
+    return date;
 }
