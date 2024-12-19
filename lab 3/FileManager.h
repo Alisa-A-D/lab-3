@@ -4,11 +4,12 @@
 #include "Event.h"
 #include <vector>
 #include <string>
+using namespace std;
 
 class FileManager {
 public:
-    bool saveEventsToFile(const std::vector<Event*>& events, const std::string& filename);
-    bool loadEventsFromFile(std::vector<Event*>& events, const std::string& filename);
+    bool saveEventsToFile(const vector<Event*>& events, const string& filename);
+    bool loadEventsFromFile(vector<Event*>& events, const string& filename);
 };
 
 #endif 
