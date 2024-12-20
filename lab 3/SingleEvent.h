@@ -10,7 +10,7 @@ private:
     int date[3];
 public:
     SingleEvent();
-    SingleEvent(const string& name, double duration, int day, int month, int year);
+    SingleEvent(const string& name, double duration, int dd, int mm, int yy);
 
     void displayEvent() const override;
     SingleEvent& inputEventDetails() override;
