@@ -12,8 +12,8 @@ private:
 
 public:
     RecurringEvent();
-    RecurringEvent(const string& name, double duration, int sDay, int sMonth, int sYear,
-        int eDay, int eMonth, int eYear, int repeats);
+    RecurringEvent(const string& name, double duration, int sd, int sm, int sy,
+    int ed, int em, int ey, int repeats);
 
     void displayEvent() const override;
     int getRepeats() const;
