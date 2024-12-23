@@ -3,9 +3,10 @@ from SingleEvent import SingleEvent
 from RecurringEvent import RecurringEvent
 
 
+
 class Menu:
-    def __init__(self, calendar):
-        self.calendar = calendar
+    def __init__(self):
+        self.calendar = Calendar()
 
     def display_menu(self):
         while True:
@@ -22,11 +23,11 @@ class Menu:
 
             choice = input("Your choice: ")
 
-            try:
-                choice = int(choice)
-            except ValueError:
-                print("Invalid choice")
+            if not choice.isdigit():
+                print("Invalid input")
                 continue
+
+            choice = int(choice)
 
             if choice == 1:
                 event = SingleEvent()
@@ -84,6 +85,5 @@ class Menu:
 
             elif choice == 0:
                 break
-
             else:
                 print("Invalid choice")
