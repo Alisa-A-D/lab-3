@@ -1,11 +1,11 @@
 from Event import Event
 
 class ReccuringEvent(Event):
-    def __init__(self, line, dur, sdd, smm, syy, edd, emm, eyy, rep):
-        super().__init__(line, dur)
-        self._start_date=[sdd, smm, syy]
-        self._end_date=[edd, emm, eyy]
-        self._repeats=rep
+    def __init__(self):
+        super().__init__()
+        self._start_date=[0, 0, 0]
+        self._end_date=[0, 0, 0]
+        self._repeats=0
     
     def get_start_date(self):
         return self._start_date
@@ -29,3 +29,14 @@ class ReccuringEvent(Event):
         self._end_date[1]=int(input("month: "))
         self._end_date[2]=int(input("year: "))
         self._repeats=int(input("repeats: "))
+
+    def change_event(self, line, dur, sdd, smm, syy, edd, emm, eyy, rep):
+        self._name=line
+        self._duration=dur
+        self._start_date[0]=sdd
+        self._start_date[1]=smm
+        self._start_date[2]=syy
+        self._end_date[0]=edd
+        self._end_date[1]=emm
+        self._end_date[2]=eyy
+        self._repeats=rep
