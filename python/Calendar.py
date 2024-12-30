@@ -1,6 +1,6 @@
 from FileManager import FileManager
 from SingleEvent import SingleEvent
-from RecurringEvent import RecurringEvent
+from ReccuringEvent import ReccuringEvent
 
 
 class Calendar:
@@ -50,7 +50,7 @@ class Calendar:
 
         total = 0.0
         for event in filtered_events:
-            if isinstance(event, RecurringEvent):
+            if isinstance(event, ReccuringEvent):
                 total += event.get_duration() * event.get_repeats()
             else:
                 total += event.get_duration()
@@ -62,7 +62,7 @@ class Calendar:
         count = 0
 
         for event in self.events:
-            if isinstance(event, RecurringEvent):
+            if isinstance(event, ReccuringEvent):
                 total_repeats += event.get_repeats()
                 count += 1
 
@@ -90,7 +90,7 @@ class Calendar:
                     (year < end_year or (year == end_year and (month < end_month or (month == end_month and day <= end_day))))):
                     filtered_events.append(event)
 
-            elif isinstance(event, RecurringEvent):
+            elif isinstance(event, ReccuringEvent):
                 s_day, s_month, s_year = event.get_start_date()
                 e_day, e_month, e_year = event.get_end_date()
 
@@ -101,4 +101,3 @@ class Calendar:
                     filtered_events.append(event)
 
         return filtered_events
-
