@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
 class Event(ABC):
-    def __init__(self, line, dur):
-        self._name=line
-        self._duration=dur
+    def __init__(self):
+        self._name=''
+        self._duration=0
         
     def get_name(self):
         return self._name
