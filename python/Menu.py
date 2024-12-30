@@ -1,8 +1,6 @@
 from Calendar import Calendar
 from SingleEvent import SingleEvent
-from RecurringEvent import RecurringEvent
-
-
+from ReccuringEvent import ReccuringEvent
 
 class Menu:
     def __init__(self):
@@ -11,7 +9,7 @@ class Menu:
     def display_menu(self):
         while True:
             print("1. Add single event")
-            print("2. Add recurring event")
+            print("2. Add reccuring event")
             print("3. Display all events")
             print("4. The shortest event")
             print("5. The longest event")
@@ -36,7 +34,7 @@ class Menu:
                 print()
 
             elif choice == 2:
-                event = RecurringEvent()
+                event = ReccuringEvent()
                 event.input_event_details()
                 self.calendar.add_event(event)
                 print()
